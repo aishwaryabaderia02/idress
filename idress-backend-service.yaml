@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: idress-backend-service
+  labels:
+    name: idress-backend-service
+    app: idress-backend-app
+spec:
+  type: NodePort
+  ports:
+    - port: 3000
+      targetPort: 3000
+      nodePort: 30010
+  selector:
+    name: idress-backend-pod
+    app: idress-backend-app

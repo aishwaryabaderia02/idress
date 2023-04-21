@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: idress-backend-pod
+  labels:
+    name: idress-backend-pod
+    app: idress-backend-app
+spec:
+  containers:
+    - name: idress-backend
+      image: aishwaryabaderia/idress:backend
+      ports:
+        - containerPort: 3000
+      resources:
+        limits:
+          memory: 512Mi
+          cpu: 1
